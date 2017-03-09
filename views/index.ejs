@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en" id="html-page">
+<head>
+
+	<meta charset="UTF-8"/>
+	<meta name="description" content="Practice html5"/>
+	<meta name="robots" content="index,follow,archive"/>
+	<meta name="keywords" content="html5, tutorial"/>
+    <script	src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/style.css" />
+	<title>To-do List Application</title>
+</head>
+<body>
+    <h1>To-do List App</h1>
+    
+    <div id="main-div">
+        <div>
+            <form action="javascript:void(0)">
+            <div id="form-div">
+                <input type="text" name="item" id="item" placeholder="Add event here..."/><br/>
+                <input type="submit" value="Add"/>
+            </div>
+        </form>
+        </div>
+    </div>
+    <div id="ul-div">
+        <h3>Events</h3>
+        <ul>
+            <% for (var i=0;i<todo.length;i++){%>
+                <li id="<%= i %>"><%= todo[i].item %></li>
+            <% } %>
+        </ul>
+    </div>
+    <div id="save-calendar-div">
+        <input type="text" name="date" id="date" placeholder="yyyy-mm-dd"/>
+        <button>Save to Google Calendar</button>    
+        <Label id="status"></Label>
+    </div>
+    
+    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+    <script src="/assets/script.js"></script>
+</body>
+</html>
